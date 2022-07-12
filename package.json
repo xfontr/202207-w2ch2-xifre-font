@@ -1,0 +1,20 @@
+{
+    "name": "challenge2week2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/xfontr/202207-w2ch2-xifre-font/issues"
+    },
+    "homepage": "https://github.com/xfontr/202207-w2ch2-xifre-font#readme",
+    "devDependencies": {
+        "husky": "^8.0.1"
+    }
+}
