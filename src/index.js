@@ -1,5 +1,4 @@
-// Escribe una función llamada strictEquals(a, b) que devuelva el mismo valor que a === b. Tu implementación no puede usar los operadores === ni !==.
-
+import strictEquals from "./valueChecker.js";
 // Testea la función con este set de pruebas:
 
 // Dada la función strictEquals
