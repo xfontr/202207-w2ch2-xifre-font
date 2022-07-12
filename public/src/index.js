@@ -18,6 +18,7 @@ const pullResult = function (result, a, b, iterations) {
     return result;
 };
 
+/* FIRST OPTION */
 const inputValue = function () {
     const testsToArray = Object.values(tests);
     let iterations = 0;
@@ -33,18 +34,15 @@ const inputValue = function () {
                 if (isNaN(a)) {
                     pullResult(!strictEquals(a, b), a, b, iterations);
                 }
-                break;
 
             case 2:
                 if (a == -0) {
                     pullResult(!strictEquals(a, b), a, b, iterations);
                 }
-                break;
             case 3:
                 if (b == -0) {
                     pullResult(!strictEquals(a, b), a, b, iterations);
                 }
-                break;
             default:
                 pullResult(strictEquals(a, b), a, b, iterations);
         }
@@ -52,4 +50,30 @@ const inputValue = function () {
     });
 };
 
-inputValue();
+/* SECOND OPTION */
+
+const inputValue2 = function () {
+    const testsToArray = Object.values(tests);
+    let iterations = 0;
+    let result;
+    let a;
+    let b;
+
+    testsToArray.forEach((test) => {
+        console.log("------------");
+        a = test[0];
+        b = test[1];
+        result = strictEquals(a, b);
+        if (result && isNaN(a)) {
+            pullResult(!result, a, b, iterations);
+        } else if (!a && !b) {
+            pullResult(true, a, b, iterations);
+        } else {
+            pullResult(result, a, b, iterations);
+        }
+
+        iterations++;
+    });
+};
+
+inputValue2();
