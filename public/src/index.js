@@ -79,7 +79,6 @@ const inputValue2 = function () {
 const inputValue3 = function () {
     const testsToArray = Object.values(tests);
     let iterations = 0;
-    let result;
     let a;
     let b;
 
@@ -88,8 +87,10 @@ const inputValue3 = function () {
         a = test[0];
         b = test[1];
 
-        if (isNaN(a)) {
-            pullResult(!strictEquals(a, b), a, b, iterations);
+        let result = strictEquals(a, b);
+
+        if (result && isNaN(a)) {
+            pullResult(!result, a, b, iterations);
         } else if (
             (1 / a).toString().includes("-") ||
             (1 / b).toString().includes("-")
@@ -102,12 +103,3 @@ const inputValue3 = function () {
 };
 
 inputValue3();
-
-// let getMinusA = 1 / a;
-// let getMinusB = 1 / b;
-// let infinityToStringA = getMinusA.toString();
-// let infinityToStringB = getMinusB.toString();
-// if (
-//     infinityToStringA.includes("-") ||
-//     infinityToStringB.includes("-")
-// ) {
